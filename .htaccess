@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Disable rewriting for existing files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^public/ - [L]
+# RewriteCond public/$0 -F
+# RewriteRule .* public/$0 [L]
+
+# redirect all other requests to index.php
+RewriteRule ^.*$ index.php [PT,L]
